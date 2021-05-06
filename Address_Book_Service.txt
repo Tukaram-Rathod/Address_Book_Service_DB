@@ -126,3 +126,13 @@ mysql>  select * from Address_Book_Service;
 | Tukaram    | Rathod    | Bhadgaon   | Jalgaon  | Maharashtra | 431548 |   8766556789 | Arjun321@hotmail.com | NULL | Professional |
 +------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+--------------+
 3 rows in set (0.00 sec)
+
+=======================================================================================================================================>
+#UC10:
+mysql> select First_Name ,count(TYPE) from Address_Book_Service;
++------------+-------------+
+| First_Name | count(TYPE) |
++------------+-------------+
+| Ashish     |           3 |
++------------+-------------+
+1 row in set (0.02 sec)
