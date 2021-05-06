@@ -83,3 +83,15 @@ mysql>  select count(City),count(State) from Address_Book_Service;
 |           3 |            3 |
 +-------------+--------------+
 1 row in set (0.08 sec)
+
+=======================================================================================================================================>
+#UC8:
+mysql>  select First_Name,City from Address_Book_Service ORDER BY First_Name;
++------------+----------+
+| First_Name | City     |
++------------+----------+
+| Aarti      | Mumbai   |
+| Ashish     | Parbhani |
+| Tukaram    | Jalgaon  |
++------------+----------+
+3 rows in set (0.09 s
