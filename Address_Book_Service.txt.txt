@@ -6,10 +6,29 @@ mysql> use Address_Book_Service;
 Database changed
 mysql>
 
-=================================================================================>
+==============================================================================================================================>
 #UC2:
 mysql> create table Address_Book_Service(First_Name varchar(30),Last_Name varchar(40),Address varchar(50),City varchar(10),
 						State varchar(15),Zip double,Phone_Number double,Email varchar(40));
 Query OK, 0 rows affected (3.44 sec)
 
 mysql>
+==============================================================================================================================>
+#UC3:
+mysql> insert into Address_Book_Service values('Ashish','Rathod','Gangakhed','Parbhani','Maharashtra',431514,8788594431,'Ashu123@gmail.com'),
+    -> ('Aarti','Bhosale','Aurangabad','Mumbai','Maharashtra',431001,8805925703,'Aarti03@yahoo.com'),
+    -> ('Sakha','Rathod','Bhadgaon','Jalgaon','Maharashtra',431548,8766556789,'Arjun321@hotmail.com'),
+    -> ('Shubham','Jadhav','Parbhani','Aurangabad','Maharashtra',9876543,8766543234,'rupesh122@gmail.com');
+Query OK, 4 rows affected (0.72 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql>  select * from Address_Book_Service;
++------------+-----------+------------+------------+-------------+---------+--------------+----------------------+
+| First_Name | Last_Name | Address    | City       | State       | Zip     | Phone_Number | Email                |
++------------+-----------+------------+------------+-------------+---------+--------------+----------------------+
+| Ashish     | Rathod    | Gangakhed  | Parbhani   | Maharashtra |  431514 |   8788594431 | Ashu123@gmail.com    |
+| Aarti      | Bhosale   | Aurangabad | Mumbai     | Maharashtra |  431001 |   8805925703 | Aarti03@yahoo.com    |
+| Sakha      | Rathod    | Bhadgaon   | Jalgaon    | Maharashtra |  431548 |   8766556789 | Arjun321@hotmail.com |
+| Shubham    | Jadhav    | Parbhani   | Aurangabad | Maharashtra | 9876543 |   8766543234 | rupesh122@gmail.com  |
++------------+-----------+------------+------------+-------------+---------+--------------+----------------------+
+4 rows in set (0.05 sec)
