@@ -1,0 +1,15 @@
+#UC1:
+mysql> create database Address_Book_Service;
+Query OK, 1 row affected (1.36 sec)
+
+mysql> use Address_Book_Service;
+Database changed
+mysql>
+
+=================================================================================>
+#UC2:
+mysql> create table Address_Book_Service(First_Name varchar(30),Last_Name varchar(40),Address varchar(50),City varchar(10),
+						State varchar(15),Zip double,Phone_Number double,Email varchar(40));
+Query OK, 0 rows affected (3.44 sec)
+
+mysql>
