@@ -136,3 +136,19 @@ mysql> select First_Name ,count(TYPE) from Address_Book_Service;
 | Ashish     |           3 |
 +------------+-------------+
 1 row in set (0.02 sec)
+
+=======================================================================================================================================>
+#UC11:
+mysql> update Address_Book_Service set TYPE='Family & Friend' where First_Name='Aarti';
+Query OK, 1 row affected (0.18 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from Address_Book_Service;
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+-----------------+
+| First_Name | Last_Name | Address    | City     | State       | Zip    | Phone_Number | Email                | Name | TYPE            |
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+-----------------+
+| Ashish     | Rathod    | Gangakhed  | Parbhani | Maharashtra | 431514 |   8788594431 | Ashu123@gmail.com    | NULL | Family          |
+| Aarti      | Bhosale   | Aurangabad | Mumbai   | Maharashtra | 431001 |   8805925703 | Aarti03@yahoo.com    | NULL | Family & Friend |
+| Tukaram    | Rathod    | Bhadgaon   | Jalgaon  | Maharashtra | 431548 |   8766556789 | Arjun321@hotmail.com | NULL | Professional    |
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+-----------------+
+3 rows in set (0.02 sec)
