@@ -73,3 +73,13 @@ mysql>  select First_Name from Address_Book_Service where city='Mumbai' and Stat
 | Aarti      |
 +------------+
 1 row in set (0.00 sec)
+
+=======================================================================================================================================>
+#UC7:
+mysql>  select count(City),count(State) from Address_Book_Service;
++-------------+--------------+
+| count(City) | count(State) |
++-------------+--------------+
+|           3 |            3 |
++-------------+--------------+
+1 row in set (0.08 sec)
