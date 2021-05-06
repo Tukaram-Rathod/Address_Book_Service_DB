@@ -95,3 +95,34 @@ mysql>  select First_Name,City from Address_Book_Service ORDER BY First_Name;
 | Tukaram    | Jalgaon  |
 +------------+----------+
 3 rows in set (0.09 s
+=======================================================================================================================================>
+#UC9:
+mysql> ALTER TABLE Address_Book_Service ADD Name varchar(15);
+Query OK, 0 rows affected (2.85 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Address_Book_Service ADD TYPE varchar(25);
+Query OK, 0 rows affected (1.72 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>  update Address_Book_Service set TYPE='Family' where First_Name='Ashish';
+Query OK, 1 row affected (0.12 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update Address_Book_Service set TYPE='Friend' where First_Name='Aarti';
+Query OK, 1 row affected (0.13 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  update Address_Book_Service set TYPE='Professional' where First_Name='Tukaram';
+Query OK, 1 row affected (0.18 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql>  select * from Address_Book_Service;
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+--------------+
+| First_Name | Last_Name | Address    | City     | State       | Zip    | Phone_Number | Email                | Name | TYPE         |
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+--------------+
+| Ashish     | Rathod    | Gangakhed  | Parbhani | Maharashtra | 431514 |   8788594431 | Ashu123@gmail.com    | NULL | Family       |
+| Aarti      | Bhosale   | Aurangabad | Mumbai   | Maharashtra | 431001 |   8805925703 | Aarti03@yahoo.com    | NULL | Friend       |
+| Tukaram    | Rathod    | Bhadgaon   | Jalgaon  | Maharashtra | 431548 |   8766556789 | Arjun321@hotmail.com | NULL | Professional |
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+--------------+
+3 rows in set (0.00 sec)
