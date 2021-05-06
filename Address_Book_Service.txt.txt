@@ -50,3 +50,16 @@ mysql>  select * from Address_Book_Service;
 +------------+-----------+------------+------------+-------------+---------+--------------+----------------------+
 4 rows in set (0.03 sec)
 =======================================================================================================================================>
+#UC5:
+mysql> delete from Address_Book_Service where First_Name='Shubham';
+Query OK, 1 row affected (0.13 sec)
+
+mysql>  select * from Address_Book_Service;
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+
+| First_Name | Last_Name | Address    | City     | State       | Zip    | Phone_Number | Email                |
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+
+| Ashish     | Rathod    | Gangakhed  | Parbhani | Maharashtra | 431514 |   8788594431 | Ashu123@gmail.com    |
+| Aarti      | Bhosale   | Aurangabad | Mumbai   | Maharashtra | 431001 |   8805925703 | Aarti03@yahoo.com    |
+| Tukaram    | Rathod    | Bhadgaon   | Jalgaon  | Maharashtra | 431548 |   8766556789 | Arjun321@hotmail.com |
++------------+-----------+------------+----------+-------------+--------+--------------+----------------------+
+3 rows in set (0.03 sec)
