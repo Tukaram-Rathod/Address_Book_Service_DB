@@ -1,0 +1,9 @@
+#UC1:
+mysql> create database Address_Book_Service;
+Query OK, 1 row affected (1.36 sec)
+
+mysql> use Address_Book_Service;
+Database changed
+mysql>
+
+================================================================>
