@@ -152,3 +152,129 @@ mysql> select * from Address_Book_Service;
 | Tukaram    | Rathod    | Bhadgaon   | Jalgaon  | Maharashtra | 431548 |   8766556789 | Arjun321@hotmail.com | NULL | Professional    |
 +------------+-----------+------------+----------+-------------+--------+--------------+----------------------+------+-----------------+
 3 rows in set (0.02 sec)
+=======================================================================================================================================>
+#UC12:
+//creating table person_info
+----------------------------------
+mysql> create table person_info
+    -> (
+    -> personId int primary key,
+    -> firstName varchar(150),
+    -> lastName varchar(150),
+    -> address varchar(150),
+    -> city varchar(150),
+    -> zip int(10),
+    -> state char(50),
+    -> phoneNumber bigint(20),
+    -> email varchar(20)
+    -> );
+Query OK, 0 rows affected, 2 warnings (2.88 sec)
+
+mysql> select * from person_info;
+Empty set (0.13 sec)
+
+//inserting records
+----------------------------------
+mysql> INSERT INTO person_info VALUES (1,'Amit','Rathod','Gangakhed','Parbhani',431514,'Maharashtra',8788594431,'Amit@gmail.com');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> INSERT INTO person_info VALUES (2,'Tejash','Tendulkar','Patna','Pandarpur',456123,'Maharashtra',8805925741,'Teju@yahoo.com');
+Query OK, 1 row affected (0.22 sec)
+
+mysql> INSERT INTO person_info VALUES (3,'Ayush','Sharma','Beed','Aurangabad',450023,'Maharashtra',8805742741,'Ayush@hotmail.com');
+Query OK, 1 row affected (0.09 sec)
+
+mysql> INSERT INTO person_info VALUES (4,'Tukaram','Rathod','Godavari Tanda','Gangakhed',431514,'Maharashtra',8805928055,'Ashu03@mit.asia');
+Query OK, 1 row affected (0.16 sec)
+
+mysql> select * from person_info;
++----------+-----------+-----------+----------------+------------+--------+-------------+-------------+-------------------+
+| personId | firstName | lastName  | address        | city       | zip    | state       | phoneNumber | email             |
++----------+-----------+-----------+----------------+------------+--------+-------------+-------------+-------------------+
+|        1 | Amit      | Rathod    | Gangakhed      | Parbhani   | 431514 | Maharashtra |  8788594431 | Amit@gmail.com    |
+|        2 | Tejash    | Tendulkar | Patna          | Pandarpur  | 456123 | Maharashtra |  8805925741 | Teju@yahoo.com    |
+|        3 | Ayush     | Sharma    | Beed           | Aurangabad | 450023 | Maharashtra |  8805742741 | Ayush@hotmail.com |
+|        4 | Tukaram   | Rathod    | Godavari Tanda | Gangakhed  | 431514 | Maharashtra |  8805928055 | Ashu03@mit.asia   |
++----------+-----------+-----------+----------------+------------+--------+-------------+-------------+-------------------+
+4 rows in set (0.04 sec)
+
+//creating person_type Table
+----------------------------------
+mysql> create table person_type
+    -> (
+    -> type_id INT PRIMARY KEY,
+    -> type_name varchar(150)
+    -> );
+Query OK, 0 rows affected (2.55 sec)
+
+mysql> describe person_type;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| type_id   | int          | NO   | PRI | NULL    |       |
+| type_name | varchar(150) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+2 rows in set (0.21 sec)
+
+//inserting records
+----------------------------------
+mysql> insert into person_type values(10,'family');
+Query OK, 1 row affected (0.11 sec)
+
+mysql> insert into person_type values(20,'family');
+Query OK, 1 row affected (0.19 sec)
+
+mysql> insert into person_type values(30,'friend');
+Query OK, 1 row affected (0.15 sec)
+
+mysql> insert into person_type values(40,'friend');
+Query OK, 1 row affected (0.14 sec)
+
+mysql> describe person_type;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| type_id   | int          | NO   | PRI | NULL    |       |
+| type_name | varchar(150) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+2 rows in set (0.13 sec)
+
+//creating Table type
+----------------------------------
+mysql> create table type
+    -> (
+    -> personID INT,
+    -> FOREIGN KEY(personID) REFERENCES person_info(personID),
+    -> type_id INT,
+    -> FOREIGN KEY(type_id) REFERENCES person_type(type_id)
+    -> );
+Query OK, 0 rows affected (3.25 sec)
+
+//inserting records
+----------------------------------
+mysql> insert into type values(1,10);
+Query OK, 1 row affected (0.21 sec)
+
+mysql> insert into type values(2,20);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into type values(3,30);
+Query OK, 1 row affected (0.09 sec)
+
+mysql> insert into type values(4,40);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> select * from type;
++----------+---------+
+| personID | type_id |
++----------+---------+
+|        1 |      10 |
+|        2 |      20 |
+|        3 |      30 |
+|        4 |      40 |
++----------+---------+
+4 rows in set (0.00 sec)
+
+mysql>
+
+================================================================================================================
