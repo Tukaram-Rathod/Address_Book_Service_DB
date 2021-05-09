@@ -278,3 +278,34 @@ mysql> select * from type;
 mysql>
 
 ================================================================================================================
+//#UC13:
+//query for ER block
+
+mysql> select * from person_info where city='Gangakhed' OR state='Maharashtra';
++----------+-----------+-----------+----------------+------------+--------+-------------+-------------+-------------------+
+| personId | firstName | lastName  | address        | city       | zip    | state       | phoneNumber | email             |
++----------+-----------+-----------+----------------+------------+--------+-------------+-------------+-------------------+
+|        1 | Amit      | Rathod    | Gangakhed      | Parbhani   | 431514 | Maharashtra |  8788594431 | Amit@gmail.com    |
+|        2 | Tejash    | Tendulkar | Patna          | Pandarpur  | 456123 | Maharashtra |  8805925741 | Teju@yahoo.com    |
+|        3 | Ayush     | Sharma    | Beed           | Aurangabad | 450023 | Maharashtra |  8805742741 | Ayush@hotmail.com |
+|        4 | Tukaram   | Rathod    | Godavari Tanda | Gangakhed  | 431514 | Maharashtra |  8805928055 | Ashu03@mit.asia   |
++----------+-----------+-----------+----------------+------------+--------+-------------+-------------+-------------------+
+4 rows in set (0.00 sec)
+
+mysql> select count(state) from person_info;
++--------------+
+| count(state) |
++--------------+
+|            4 |
++--------------+
+1 row in set (0.07 sec)
+
+mysql> select count(city) from person_info;
++-------------+
+| count(city) |
++-------------+
+|           4 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql>
